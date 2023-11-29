@@ -1,22 +1,27 @@
-import React from 'react';
-import { DataGrid } from '@material-ui/data-grid';
-import data from '../../database/db.json';
-
-const columns = [
- { field: 'professor_id', headerName: 'Professor ID', width: 130 },
- { field: 'nome', headerName: 'Nome', width: 130 },
-];
+import React from "react";
+import data from "../../database/db.json";
 
 export default function Home() {
- return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={data}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
+  return (
+    <div>
+      <table className="table table-striped">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">ID Professor</th>
+            <th scope="col">Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.professores.map((professor, index) => {
+            return (
+              <tr key={index}>
+                <td>{professor.professor_id}</td>
+                <td>{professor.nome}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
- );
+  );
 }
