@@ -2,17 +2,22 @@
   "professores": [
     {
       "professor_id": 1,
-      "materia_id": null,
-      "nome": "Professor 1",
+      "materia_id": 2,
+      "nome": "Professor1",
       "idade": 35,
-      "cpf": "123.456.789-01"
+      "cpf": "123.456.789-01",
+      "turmas": [
+        "Turma A",
+        "Turma B"
+      ]
     },
     {
       "professor_id": 2,
-      "materia_id": null,
-      "nome": "Professor 2",
+      "materia_id": 1,
+      "nome": "Professor2",
       "idade": 40,
-      "cpf": "987.654.321-02"
+      "cpf": "987.654.321-02",
+      "turmas": "Turma B"
     }
   ],
   "turmas": [
@@ -44,11 +49,11 @@
   "materias": [
     {
       "materia_id": 1,
-      "descricao": "Matéria 1"
+      "descricao": "Matemática"
     },
     {
       "materia_id": 2,
-      "descricao": "Matéria 2"
+      "descricao": "Física"
     }
   ],
   "atividades": [

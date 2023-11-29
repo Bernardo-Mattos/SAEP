@@ -5,12 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 function App() {
- const [username, setUsername] = useState("");
- const [password, setPassword] = useState("");
- const [error, setError] = useState("");
- const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
- const handleLogin = async () => {
+  const handleLogin = async () => {
     // Simulação de verificação de credenciais
     const professor = data.professores.find(
       (prof) => prof.nome === username && prof.cpf === password
@@ -21,43 +21,66 @@ function App() {
       setError("Credenciais corretas");
       console.log("Login bem-sucedido!");
       await new Promise((resolve) => setTimeout(resolve, 500));
-      navigate("/home");
+      navigate(`/home/${professor.nome}`);
     } else {
       setError(
         "Credenciais erradas, por favor insira seu nome como login e seu CPF como senha"
       );
     }
- };
+  };
 
- return (
-    <div className="container">
+  return (
+    <div className="container form-group">
       <h1>Tela de Login</h1>
-      <div>
-        <label>Nome do Professor:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+            UserName
+          </span>
+        </div>
         <input
-          type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
         />
       </div>
-      <div>
-        <label>Senha (CPF):</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+            Senha
+          </span>
+        </div>
         <input
-          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
         />
       </div>
       <button className="btn btn-primary" onClick={handleLogin}>
         Entrar
       </button>
       {error && (
-        <div className={error.includes("corretas") ? "alert alert-success mt-3" : "alert alert-danger mt-3"} role="alert">
+        <div
+          className={
+            error.includes("corretas")
+              ? "alert alert-success mt-3"
+              : "alert alert-danger mt-3"
+          }
+          role="alert"
+        >
           {error}
         </div>
       )}
     </div>
- );
+  );
 }
 
 export default App;
