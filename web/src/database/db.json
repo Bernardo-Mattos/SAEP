@@ -1,0 +1,68 @@
+{
+  "professores": [
+    {
+      "professor_id": 1,
+      "materia_id": null,
+      "nome": "Professor 1",
+      "idade": 35,
+      "cpf": "123.456.789-01"
+    },
+    {
+      "professor_id": 2,
+      "materia_id": null,
+      "nome": "Professor 2",
+      "idade": 40,
+      "cpf": "987.654.321-02"
+    }
+  ],
+  "turmas": [
+    {
+      "turma_id": 1,
+      "descricao": "Turma A"
+    },
+    {
+      "turma_id": 2,
+      "descricao": "Turma B"
+    }
+  ],
+  "alunos": [
+    {
+      "aluno_id": 1,
+      "nome": "Aluno 1",
+      "idade": 20,
+      "matricula": "M12345",
+      "turma_id": 1
+    },
+    {
+      "aluno_id": 2,
+      "nome": "Aluno 2",
+      "idade": 22,
+      "matricula": "M54321",
+      "turma_id": 2
+    }
+  ],
+  "materias": [
+    {
+      "materia_id": 1,
+      "descricao": "Matéria 1"
+    },
+    {
+      "materia_id": 2,
+      "descricao": "Matéria 2"
+    }
+  ],
+  "atividades": [
+    {
+      "atividade_id": 1,
+      "descricao": "Atividade 1",
+      "aluno_id": 1,
+      "materia_id": 1
+    },
+    {
+      "atividade_id": 2,
+      "descricao": "Atividade 2",
+      "aluno_id": 2,
+      "materia_id": 2
+    }
+  ]
+}
